@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event: Dragenter</title>
+    
+<style>
+    #drag {
+        width: 30vw;
+        height: 30vw;
+        background-color:cornflowerblue;
+    }
+    #target {
+        width: 30vw;
+        height: 30vw;
+        background-color: coral;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="drag" ondrag="debug(event)" ondragend="debug(event)" draggable="true"></div>
+
+    <div id="target" ondragenter="changeColor(event)"></div>
+
+
+    <script>
+
+        function debug(e) {
+            console.log('Evento: ' + e.type);
+             
+        }
+
+        function changeColor(e) {
+
+        const target = document.getElementById('target');
+
+        event.target.style.background = "green";
+
+        }
+    </script>
+    
+</body>
+</html>
